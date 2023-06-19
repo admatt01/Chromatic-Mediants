@@ -4,7 +4,11 @@
 
  A chromatic mediant is derived from altering the mediant (third triad) in the scale by changing one or two notes of the mediant while leaving one note unchanged with the result that the new triad will be "chromatic" rather than diatonic, meaning that it does not belong in the natural progression of the scale. A chromatic submediant is basically the same thing but applied to the sixth triad in the scale progression. Why do this? It is commonly applied to create a sense of tension, expectation, adventure, the unknown etc and is especially popular with cinematic film scores. If you listen to the soundtrack of Lord of the Rings you will hear many examples of chromatic mediants being used.
 
- Since I am a low-coder/no-coder, the application itself was developed mostly in conjunction with ChatGPT, first as a standalone python app and then into flask for deployment as a simple web application. If you are new to trying to code with ChatGPT you will quicky find it's no panacea for developing applications, especially ones such as music where the some of the rules can appear ambiguous. In some cases it might be quicker to learn how to actually code rather than wait until ChatGPT gets it right! The directory structure is preserved for running as a flask app on port 8080 (can be easily changed by editing the python file.
+ Since I am a low-coder/no-coder, the application itself was developed mostly in conjunction with ChatGPT, first as a standalone python app and then into flask for deployment as a simple web application. If you are new to trying to code with ChatGPT you will quicky find it's no panacea for developing applications, especially ones such as music where the some of the rules can appear ambiguous. In some cases it might be quicker to learn how to actually code rather than wait until ChatGPT gets it right! 
+ 
+Installing and running the code:
+ 
+ - The directory structure is preserved for running as a flask app on port 8080 (can be easily changed by editing the python file). Once you have Flask installed all you should need to do is clone the mediants-v1 folder and its contents into your virtualenv and run the application with "python chromatic-mediants-flask-v1.py &" and browse to http://localhost:8080.
 
  The only dependencies to run the code as a standalone app are Python3 and Flask. I have also included the standalone python code for usage directly from the command line which is verified on Ubuntu LTS but should work on any OS in a python3 environment.
 
