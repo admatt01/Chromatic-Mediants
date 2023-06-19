@@ -11,3 +11,7 @@
  After quite a few hours of careful questioning and refinement plus some debugging and basic modification of the code myself, the application was finally produced.
 
  I have also ported the application to AWS Lambda as a serverless app which is a quite straightforward process if you have an AWS account and are familiar with Zappa. You can try the application and see how it works by going to https://sr8t5b7hac.execute-api.ap-southeast-4.amazonaws.com/dev. The application usage is basic and self-explanatory.
+
+To Do's:
+ - Format into a table style layout to make it look a little prettier.
+ - Add 7th's, 9th's and maybe 11th's to the chromatic mediants. Shouldn't be too difficult as the chromatic scale and scale interval tuples are already in place to iterate through.
