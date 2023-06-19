@@ -4,7 +4,7 @@
 
  A chromatic mediant is derived from altering the mediant (third triad) in the scale by changing one or two notes of the mediant while leaving one note unchanged with the result that the new triad will be "chromatic" rather than diatonic, meaning that it does not belong in the natural progression of the scale. Why do this? It is commonly applied to create a sense of tension, expectation, adventure, the unknown etc and is especially popular with cinematic film scores. If you listen to the soundtrack of Lord of the Rings you will hear many examples of chromatic mediants being used.
 
- Since I am a low-coder/no-coder, the application itself was developed mostly by ChatGPT, first as a standalone python app and then into flask for deployment as a simple web application. If you are new to trying to code with ChatGPT you will quicky find it's no panacea for developing applications, especially ones such as music where the some of the rules can appear ambiguous. In some cases it might be quicker to learn how to actually code rather than wait until ChatGPT gets it right!
+ Since I am a low-coder/no-coder, the application itself was developed mostly in conjunction with ChatGPT, first as a standalone python app and then into flask for deployment as a simple web application. If you are new to trying to code with ChatGPT you will quicky find it's no panacea for developing applications, especially ones such as music where the some of the rules can appear ambiguous. In some cases it might be quicker to learn how to actually code rather than wait until ChatGPT gets it right!
 
  After quite a few hours of careful questioning and refinement plus some debugging and basic modification of the code myself, the application was finally produced.
 
