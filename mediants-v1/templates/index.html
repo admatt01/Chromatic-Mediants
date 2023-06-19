@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+    <title>Chromatic Chord Triads</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+        }
+        .results {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chromatic Chord Triads</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="scale_type">Scale Type:</label>
+                <select id="scale_type" name="scale_type">
+                    {% for type in scale_types %}
+                        <option value="{{ type }}" {% if type == scale_type %}selected{% endif %}>{{ type }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="root_note">Root Note:</label>
+                <select id="root_note" name="root_note">
+                    {% for note in chromatic_scale %}
+                        <option value="{{ note }}" {% if note == root_note %}selected{% endif %}>{{ note }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit">Generate Chords</button>
+        </form>
+        <div class="results">
+            <h2>Original Triads:</h2>
+            {% for triad in triads %}
+                <p>{{ triad }}</p>
+            {% endfor %}
+            <h2>Mediant Triad:</h2>
+            <p>{{ mediant_triad }}</p>
+            <h2>Submediant Triad:</h2>
+            <p>{{ submediant_triad }}</p>
+            <h2>Chromatic Mediants:</h2>
+            <p>{{ chromatic_mediant_1 }}</p>
+            <p>{{ chromatic_mediant_2 }}</p>
+            <h2>Chromatic Submediants:</h2>
+            <p>{{ chromatic_submediant_1 }}</p>
+            <p>{{ chromatic_submediant_2 }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* Apply some basic styles to the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+/* Style the select dropdowns */
+select {
+    padding: 5px;
+}
+
+/* Apply some styles to the results */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Apply some styles to the error message */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Add some spacing between elements */
+p {
+    margin-bottom: 10px;
+}
