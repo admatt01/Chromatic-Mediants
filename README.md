@@ -1,6 +1,6 @@
 # Chromatic Mediants
  This is a simple python/flask application for creating chromatic mediants and submediants from any musical scale.
- Chromatic mediants are a chord type (triad) that are based on the mediant and submediant triad of a major or minor scale. The mediant and submediant are the third and sixth triad respectively of the diatonic scale. Diatonic simmply means following the natural progression of the scale without altering the natural pattern in any way.
+ Chromatic mediants are a chord type (triad) that are based on the mediant and submediant triad of a major or minor scale. The mediant and submediant are the third and sixth triad respectively of the diatonic scale. Diatonic simply means following the natural progression of the scale without altering the natural pattern in any way.
 
  A chromatic mediant is derived from altering the mediant (third triad) in the scale by changing one or two notes of the mediant while leaving one note unchanged with the result that the new triad will be "chromatic" rather than diatonic, meaning that it does not belong in the natural progression of the scale. A chromatic submediant is basically the same thing but applied to the sixth triad in the scale progression. Why do this? It is commonly applied to create a sense of tension, expectation, adventure, the unknown etc and is especially popular with cinematic film scores. If you listen to the soundtrack of Lord of the Rings you will hear many examples of chromatic mediants being used.
 
