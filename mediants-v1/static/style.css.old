@@ -52,16 +52,16 @@ td {
 }
 
 .scroll-container {
-    overflow: auto;
+  overflow: auto;
 }
 
 .scroll td:first-of-type {
-    position: sticky;
-    left: 0;
-    border-left: none;
-    background: #f4f4f4;
-    color: #212121;
-    font-weight: bold;
+  position: sticky;
+  left: 0;
+  border-left: none;
+  background: #f4f4f4;
+  color: #212121;
+  font-weight: bold;
 }
 
 .container {
@@ -89,6 +89,11 @@ td {
     box-sizing: border-box; /* Include borders in the width calculation */
 }
 
+th:first-child,
+td:first-child {
+/*    border-left: 1px solid #ddd; /* Add vertical border to the first column */
+}
+
 th:last-child,
 td:last-child {
     border-right: 1px solid #ddd; /* Remove right border from the last column */
@@ -97,15 +102,4 @@ td:last-child {
 
 th {
     background-color: #f2f2f2; /* Light gray background for table headers */
-}
-
-/* New styles */
-.audio-widget {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.audio-widget audio {
-    margin-right: 10px;
 }
