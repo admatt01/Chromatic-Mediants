@@ -19,7 +19,7 @@ Installing and running the code:
   - Install Flask (pipenv install flask)
   - Install Zappa (pipenv install zappa)
 
-Log into your AWS account and setup a user with sufficient privileges for a Zappa serverless deployment (plenty of info available via Google on how to do this) and download your access and secret access key. Create a credentials file in your /home/.AWS directory and enter your access and secret key details and run 'zappa init'. This will setup the json file for your Lambda deployment and you will need to edit your AWS region to suit whatever region you would like to deploy into. There should be no cost since AWS Lambda is included in the AWS Free-Tier.
+Log into your AWS account and setup a user with sufficient privileges for a Zappa serverless deployment (plenty of info available via Google on how to do this) and download your access and secret access key. Create a credentials file in your /home/.aws directory and enter your access and secret key details and run 'zappa init'. This will setup the json file for your Lambda deployment and you will need to edit your AWS region to suit whatever region you would like to deploy into. There should be no cost since AWS Lambda is included in the AWS Free-Tier.
 
 
 To Do's:
