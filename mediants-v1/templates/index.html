@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
-    <title>Chromatic Chord Triads</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Mediants and Chromatic Mediants</title>
     <style>
         .container {
-            width: 500px;
+            width: 600px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
@@ -20,11 +20,54 @@
             margin-top: 20px;
             text-align: left;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-spacing: 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden; /* Hide overflowed text */
+            text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */
+            border-right: 1px solid #ddd; /* Add vertical borders */
+        }
+        th:first-child, td:first-child {
+            border-left: 1px solid #ddd; /* Add vertical border to the first column */
+        }
+        th:last-child, td:last-child {
+            border-right: 1px solid #ddd; /* Remove right border from the last column */
+        }
+        th {
+            background-color: #f2f2f2; /* Light gray background for table headers */
+        }
+        .results p {
+            margin-bottom: 5px;
+        }
+        .audio-table {
+            margin-top: 20px;
+        }
+        .audio-table td {
+            padding: 10px;
+        }
+        .audio-widget {
+            display: flex;
+            align-items: center;
+        }
+        .audio-widget audio {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Chromatic Chord Triads</h1>
+        <h1>Mediants and Chromatic Mediants</h1>
+        <h3>Calculate chromatic mediants and chromatic submediants for any given scale</h3>
+        <p></p>
         <form method="POST">
             <div class="form-group">
                 <label for="scale_type">Scale Type:</label>
@@ -45,21 +88,178 @@
             <button type="submit">Generate Chords</button>
         </form>
         <div class="results">
-            <h2>Original Triads:</h2>
-            {% for triad in triads %}
-                <p>{{ triad }}</p>
-            {% endfor %}
-            <h2>Mediant Triad:</h2>
-            <p>{{ mediant_triad }}</p>
-            <h2>Submediant Triad:</h2>
-            <p>{{ submediant_triad }}</p>
-            <h2>Chromatic Mediants:</h2>
-            <p>{{ chromatic_mediant_1 }}</p>
-            <p>{{ chromatic_mediant_2 }}</p>
-            <h2>Chromatic Submediants:</h2>
-            <p>{{ chromatic_submediant_1 }}</p>
-            <p>{{ chromatic_submediant_2 }}</p>
+            <table>
+                <tr>
+                    <th>Original Triads</th>
+                    <th>Mediant Triad</th>
+                    <th>Submediant Triad</th>
+                    <th>Chromatic Mediants</th>
+                    <th>Chromatic Submediants</th>
+                </tr>
+                <tr>
+                    <td>
+                        {% for triad in triads %}
+                            {{ triad }}<br>
+                        {% endfor %}
+                    </td>
+                    <td>{{ mediant_triad }}</td>
+                    <td>{{ submediant_triad }}</td>
+                    <td>
+                        <ul>
+                            <li>{{ chromatic_mediant_1 }}</li>
+                            <li>{{ chromatic_mediant_2 }}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>{{ chromatic_submediant_1 }}</li>
+                            <li>{{ chromatic_submediant_2 }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </div>
-</body>
+        <p></p>
+        <p></p>
+        <p>Below are some audio examples that transition from C Major root to the various Mediants and Chromatic Mediants. Please note that to demonstrate the concept, all examples are in C Major and will not change when other scales are selected</p>
+        <table class="audio-table">
+            <tr>
+                <td>
+                    <div class="audio-widget">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='audio/C-Major-to-E-Minor.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>C Major to Mediant (C Major to E Minor)</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="audio-widget">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='audio/C-Major-to-A-Minor.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>C Major to Submediant (C Major to A Minor)</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="audio-widget">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='audio/C-Major-to-E-Major.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>C Major to First Chromatic Mediant (C Major to E Major)</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="audio-widget">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='audio/C-Major-to-Eb-Major.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>C Major to second Chromatic Mediant (C Major to Eb Major)</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="audio-widget">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='audio/C-Major-to-A-Major.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>C Major to First Chromatic Submediant (C Major to A Major)</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="audio-widget">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='audio/C-Major-to-Ab-Major.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>C Major to Second Chromatic Submediant (C Major to Ab Major)</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+		<p></p>
+		<p></p>
+		<p>Below are some audio examples that transition from C Minor root to the various Mediants and Chromatic Mediants. Please note that to demonstrate the concept, all examples are in C Minor and will not change when other scales are selected</p>
+		<table class="audio-table">
+        <tr>
+            <td>
+				<div class="audio-widget">
+					<audio controls>
+						<source src="{{ url_for('static', filename='audio/C-Minor-to-D#-Major.mp3') }}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					<p>C Minor to Mediant (C Minor to D# Major)</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="audio-widget">
+					<audio controls>
+						<source src="{{ url_for('static', filename='audio/C-Minor-to-G#-Major.mp3') }}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					<p>C Minor to Submediant (C Minor to G# Major)</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="audio-widget">
+					<audio controls>
+						<source src="{{ url_for('static', filename='audio/C-Minor-to-D#-Minor.mp3') }}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					<p>C Minor to First Chromatic Mediant (C Minor to D# Minor)</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="audio-widget">
+					<audio controls>
+						<source src="{{ url_for('static', filename='audio/C-Minor-to-E-Minor.mp3') }}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					<p>C Minor to second Chromatic Mediant (C Minor to E Minor)</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="audio-widget">
+					<audio controls>
+						<source src="{{ url_for('static', filename='audio/C-Minor-to-G#-Minor.mp3') }}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					<p>C Minor to First Chromatic Submediant (C Minor to G# Minor)</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="audio-widget">
+					<audio controls>
+						<source src="{{ url_for('static', filename='audio/C-Minor-to-A-Minor.mp3') }}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					<p>C Minor to Second Chromatic Submediant (C Minor to A Minor)</p>
+                </div>
+               </td>
+            </tr>
+        </table>
+    </body>
 </html>

@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, send_from_directory, render_template, request
+import os
 
 app = Flask(__name__)
 
@@ -11,6 +12,11 @@ minor_chord_names = ['Minor', 'Diminished', 'Major', 'Minor', 'Minor', 'Major', 
 # Default scale type and root note
 default_scale_type = 'Major'
 default_root_note = 'C'
+
+@app.route('/audio/<path:filename>')
+def serve_audio(filename):
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+    return send_from_directory(os.path.join(root_dir, 'static', 'audio'), filename)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -112,6 +118,5 @@ def index():
                            scale_types=['Major', 'Minor'], chromatic_scale=chromatic_scale)
 
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(debug=True)
