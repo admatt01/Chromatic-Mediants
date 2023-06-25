@@ -11,7 +11,7 @@ Since I am a low-coder/no-coder, the application itself was developed mostly in 
  
 Installing and running the code:
  
- - You will need Python3, Flask, Zappa and an AWS account.
+- You will need Python3, Flask, Zappa and an AWS account.
   - Make sure your workstation has Python3.9 installed
   - Clone or download and tar/unzip the code to your machine
   - cd into the mediants-v1 project folder
@@ -19,9 +19,8 @@ Installing and running the code:
   - Install Flask (pipenv install flask)
   - Install Zappa (pipenv install zappa)
 
-Log into your AWS account and setup a user with sufficient privileges for a Zappa serverless deployment (plenty of info available via Google on how to do this) and download your access and secret access key. Create a credentials file in your /home/.aws directory and enter your access and secret key details and run 'zappa init'. This will setup the json file for your Lambda deployment and you will need to edit your AWS region to suit whatever region you would like to deploy into. There should be no cost since AWS Lambda is included in the AWS Free-Tier.
-
+Log into your AWS account and setup a user with sufficient privileges for a Zappa serverless deployment (plenty of info available via Google on how to do this) and download your access and secret access key. Create a credentials file in your /home/.aws directory and enter your access and secret key details and run 'zappa init'. This will setup the json file for your Lambda deployment and you will then need to edit the init file created for inclusion of your AWS region to suit whatever region you would like to deploy into. Once you have made and saved your changes run 'zappa deploy dev'. The files will upload to AWS Lambda and create the application resulting in an endpoint you can browse to for testing. There should be no cost since AWS Lambda is included in the AWS Free-Tier.
 
 To Do's:
- - Format into a table style layout to make it look a little prettier.
- - Add 7th's, 9th's and maybe 11th's to the chromatic mediants. Shouldn't be too difficult as the chromatic scale and scale interval tuples are already in place to iterate through.
+ - Add 7th's, 9th's and maybe 11th's to the chromatic mediants. Shouldn't be too difficult as the chromatic scale and scale interval tuples are already in place to 
+ iterate through.
