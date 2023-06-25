@@ -1,5 +1,5 @@
 # Chromatic Mediants
-This is a simple python/flask application for creating chromatic mediants and submediants from any musical scale.
+This is a simple python/flask,serverless application for creating chromatic mediants and submediants from any musical scale.
 Chromatic mediants are a chord type (triad) that are based on the mediant and submediant triad of a major or minor scale. The mediant and submediant are the third and sixth triad respectively of the diatonic scale. Diatonic simply means following the natural progression of the scale without altering the natural pattern in any way.
 
 As well as printing the mediants and classical chromatic mediants for any Major or Minor scale, the application also includes audio samples for chromatic mediants and submediants in the key of C Major and C Minor to give you an idea of how the mediants sound and their effect.
