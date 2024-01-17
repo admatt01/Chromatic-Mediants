@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a5c1037f-d892-42c6-8052-bdd6bee0db8b/resourceGroups/DefaultResourceGroup-SEAU/providers/Microsoft.Web/sites/chromatic-mediants",
+    "appService.deploySubpath": "."
+}
